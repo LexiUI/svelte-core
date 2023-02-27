@@ -25,11 +25,12 @@
 
 	const getItemById = (id: string) => $accordionItems[id];
 
+	export let alwaysOpen: boolean = false;
 	const setExpansion = (id: string, value: boolean) => {
 		accordionItems.update((context) => {
-			if(context[activeAccordionItemId]) context[activeAccordionItemId].isExpanded = false;
+			if(context[activeAccordionItemId] && !alwaysOpen) context[activeAccordionItemId].isExpanded = false;
 			context[id].isExpanded = value;
-			if(value) activeAccordionItemId = id;
+			activeAccordionItemId = value ? id : "";
 			return context;
 		});
 	};
