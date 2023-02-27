@@ -20,6 +20,14 @@
 	setContext<LexiAccordionItemContext>(constants.ACCORDION_ITEM_CONTEXT, {
 		id
 	});
+
+	const { accordionItems } = accordionContext;
+
+let _accordionItems = $accordionItems;
+
+accordionItems.subscribe((value) => {
+	_accordionItems = value;
+});
 </script>
 
-<slot />
+<slot isExpanded={_accordionItems[id].isExpanded}/>
