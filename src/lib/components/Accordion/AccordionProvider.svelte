@@ -6,7 +6,7 @@
 	import type { LexiAccordionContext, LexiAccordionItemsRecord } from './types';
 
 	const accordionItems = writable<LexiAccordionItemsRecord>({});
-	let activeAccordionItemId = "";
+	let activeAccordionItemId = '';
 	const registerAccordionItem = (isExpanded: boolean) => {
 		const id = shortid.generate();
 		accordionItems.update((context) => {
@@ -28,9 +28,10 @@
 	export let alwaysOpen: boolean = false;
 	const setExpansion = (id: string, value: boolean) => {
 		accordionItems.update((context) => {
-			if(context[activeAccordionItemId] && !alwaysOpen) context[activeAccordionItemId].isExpanded = false;
+			if (context[activeAccordionItemId] && !alwaysOpen)
+				context[activeAccordionItemId].isExpanded = false;
 			context[id].isExpanded = value;
-			activeAccordionItemId = value ? id : "";
+			activeAccordionItemId = value ? id : '';
 			return context;
 		});
 	};

@@ -23,11 +23,11 @@
 
 	const { accordionItems } = accordionContext;
 
-let _accordionItems = $accordionItems;
+	let _accordionItems = $accordionItems;
 
-accordionItems.subscribe((value) => {
-	_accordionItems = value;
-});
+	accordionItems.subscribe((value) => {
+		_accordionItems = value;
+	});
 </script>
 
-<slot isExpanded={_accordionItems[id].isExpanded}/>
+<slot isExpanded={_accordionItems[id].isExpanded} />
