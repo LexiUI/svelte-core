@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { getContext, onDestroy, setContext } from 'svelte';
-	import { readable } from 'svelte/store';
 	import * as constants from './constants';
 	import type { LexiAccordionItemContext, LexiAccordionContext } from './types';
 
