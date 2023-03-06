@@ -35,22 +35,24 @@
 	export { _class as class };
 	export let tag: string = 'h3';
 	export let activeClass: string = '';
+	export let inactiveClass: string = '';
 	export let triggerTag: string = 'button';
 	export let triggerClass: string = '';
 	export let triggerActiveClass: string = '';
+	export let triggerInactiveClass: string = '';
 
 	$: wrapperComputedClass = () => {
 		if (_accordionItems[id].isExpanded) {
 			return _class + ' ' + activeClass;
 		}
-		return _class;
+		return _class + ' ' + inactiveClass;
 	};
 
 	$: triggerComputedClass = () => {
 		if (_accordionItems[id].isExpanded) {
-			return triggerClass + ' ' + triggerActiveClass;
+			return (triggerClass + ' ' + triggerActiveClass).trim();
 		}
-		return triggerClass;
+		return (triggerClass + ' ' + triggerInactiveClass).trim();
 	};
 </script>
 

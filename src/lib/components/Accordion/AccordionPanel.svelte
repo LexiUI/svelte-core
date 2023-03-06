@@ -28,12 +28,13 @@
 	let _class: string = '';
 	export { _class as class };
 	export let activeClass: string = '';
+	export let inactiveClass: string = '';
 
 	$: computedClass = () => {
 		if (_accordionItems[id].isExpanded) {
-			return _class + ' ' + activeClass;
+			return (_class + ' ' + activeClass).trim();
 		}
-		return _class;
+		return (_class + ' ' + inactiveClass).trim();
 	};
 </script>
 

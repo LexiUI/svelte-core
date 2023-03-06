@@ -1,22 +1,19 @@
 <script lang="ts">
-	import { Accordion } from '$lib';
+    const components = [
+        {
+            name: "Accordion",
+            link: '/accordion'
+        }
+    ]
 </script>
 
-<Accordion.Provider class="test">
-	<Accordion.Item let:isExpanded>
-		<Accordion.Trigger class="trigger" activeClass="trigger-active"
-			>This should trigger the accordion.</Accordion.Trigger
-		>
-		<Accordion.Panel class="panel" activeClass="panel-active"
-			>First trigger's panel. Is Open: {isExpanded}</Accordion.Panel
-		>
-	</Accordion.Item>
-	<Accordion.Item let:isExpanded>
-		<Accordion.Trigger class="trigger" activeClass="trigger-active"
-			>This the second item in the accordion.</Accordion.Trigger
-		>
-		<Accordion.Panel class="panel" activeClass="panel-active"
-			>Second accordion panel. Is Open: {isExpanded}</Accordion.Panel
-		>
-	</Accordion.Item>
-</Accordion.Provider>
+<div class="p-8">
+    <h1 class="text-2xl"> Components </h1>
+    <ul>
+        {#each components as component}            
+        <li class="py-2">
+            <a class="text-blue-600" href={component.link}>{component.name}</a>     
+        </li>
+        {/each}
+    </ul>
+</div>
