@@ -1,3 +1,19 @@
-<h1>Welcome to your library project</h1>
-<p>Create your package using @sveltejs/package and preview/showcase your work with SvelteKit</p>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+    const components = [
+        {
+            name: "Accordion",
+            link: '/accordion'
+        }
+    ]
+</script>
+
+<div class="p-8">
+    <h1 class="text-2xl"> Components </h1>
+    <ul>
+        {#each components as component}            
+        <li class="py-2">
+            <a class="text-blue-600" href={component.link}>{component.name}</a>     
+        </li>
+        {/each}
+    </ul>
+</div>
